@@ -2,10 +2,10 @@ import requests
 import mysql.connector
 
 mysql_db = mysql.connector.Connect(
-             host = "sql5.freemysqlhosting.net",
-             user = "sql5706488",
-             password = "pRnxFDaek3",
-             database = "sql5706488"
+             host = "findwordvideo.mysql.dbaas.com.br",
+             user = "findwordvideo",
+             password = "Locaweb@2",
+             database = "findwordvideo"
            )
 data_cursor = mysql_db.cursor()
 
@@ -42,7 +42,8 @@ for video_dic in videos:
     #for key, val in video_dic.items():
         
 
-sql = "INSERT INTO item_video(kind, etag, videoId, title, description, publishTime, thumbnail_default)"
+#TODO: mudar nome de campo para ingles
+sql = "INSERT INTO video_inf(kind, etag, videoId, title, description, data_publicacao, thumbnail_default)"
 sql += " VALUES(%s, %s, %s, %s, %s, %s, %s)"
 
 try:
